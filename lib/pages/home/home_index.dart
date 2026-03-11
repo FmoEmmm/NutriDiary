@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutridiary/widget/home/topsearch.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -8,8 +9,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  List<Widget> _getScrollChildern() {
+    return [SliverToBoxAdapter(child: TopSearch())];
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Home"));
+    return CustomScrollView(slivers: _getScrollChildern());
   }
 }
