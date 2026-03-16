@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutridiary/widget/home/foodlist.dart';
 import 'package:nutridiary/widget/home/topsearch.dart';
 
 class HomeView extends StatefulWidget {
@@ -10,7 +11,10 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   List<Widget> _getScrollChildern() {
-    return [SliverToBoxAdapter(child: TopSearch())];
+    return [
+      SliverToBoxAdapter(child: TopSearch()),
+      SliverToBoxAdapter(child: Foodlist()),
+    ];
   }
 
   @override

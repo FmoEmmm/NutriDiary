@@ -8,7 +8,6 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
-  // 以下为本地 UI 状态，仅用于演示开关效果，不做任何持久化
   bool _darkMode = false;
   bool _systemfont = true;
 

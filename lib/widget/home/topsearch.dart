@@ -8,28 +8,25 @@ class TopSearch extends StatefulWidget {
 }
 
 class _TopSearchState extends State<TopSearch> {
+  TextEditingController _SearchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 10,
-      left: 3,
-      right: 3,
-      child: Padding(
-        padding: EdgeInsets.all(5),
-        child: Container(
-          alignment: Alignment.centerLeft,
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          height: 50,
-          decoration: BoxDecoration(
-            color: const Color.fromRGBO(57, 197, 188, 0.7),
+    return Padding(
+      padding: EdgeInsets.all(12),
+      child: TextField(
+        controller: _SearchController,
+        onSubmitted: (value) {
+          print(value);
+        },
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.only(left: 20),
+          hintText: "Search...",
+          fillColor: const Color.fromRGBO(57, 197, 188, 0.7),
+          filled: true,
+          border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
-          ),
-          child: Text(
-            "Search",
-            style: TextStyle(
-              color: const Color.fromRGBO(0, 0, 0, 0.7),
-              fontSize: 16,
-            ),
+            borderSide: BorderSide.none,
           ),
         ),
       ),
