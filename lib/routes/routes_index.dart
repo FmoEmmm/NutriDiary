@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nutridiary/pages/Main/main_index.dart';
 import 'package:nutridiary/pages/login/login_index.dart';
+import 'package:nutridiary/pages/setting/setting_index.dart';
 
 // 返回App根组件
 Widget getRootWidget() {
@@ -12,5 +13,6 @@ Map<String, Widget Function(BuildContext)> getRootRoutes() {
   return {
     "/Login": (context) => LoginPage(),
     "/": (context) => MainPage(), //主页
+    "/Setting": (context) => SettingPage(),
   };
 }

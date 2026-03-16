@@ -10,6 +10,13 @@ class MyView extends StatefulWidget {
 class _MyViewState extends State<MyView> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("My"));
+    return Center(
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, "/Setting");
+        },
+        child: Text("Setting"),
+      ),
+    );
   }
 }
