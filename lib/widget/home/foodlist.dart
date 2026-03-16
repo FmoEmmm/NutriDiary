@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutridiary/widget/home/bottombutton.dart';
 
 class Foodlist extends StatefulWidget {
   const Foodlist({super.key});
@@ -42,23 +43,7 @@ class _FoodlistState extends State<Foodlist> {
             );
           },
         ),
-        Positioned(
-          right: 10,
-          bottom: 10,
-          child: GestureDetector(
-            onTap: () {},
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40),
-                color: Color.fromRGBO(102, 204, 255, 0.7),
-              ),
-              width: 50,
-              height: 50,
-              alignment: Alignment.center,
-              child: Text('+', style: TextStyle(fontSize: 30)),
-            ),
-          ),
-        ),
+        Bottombutton(),
       ],
     );
   }
