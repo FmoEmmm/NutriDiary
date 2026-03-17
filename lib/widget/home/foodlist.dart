@@ -43,7 +43,6 @@ class _FoodlistState extends State<Foodlist> {
             );
           },
         ),
-        Bottombutton(),
       ],
     );
   }

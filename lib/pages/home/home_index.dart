@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutridiary/widget/home/bottombutton.dart';
 import 'package:nutridiary/widget/home/foodlist.dart';
 import 'package:nutridiary/widget/home/topsearch.dart';
 
@@ -19,6 +20,11 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(slivers: _getScrollChildern());
+    return Stack(
+      children: [
+        CustomScrollView(slivers: _getScrollChildern()),
+        Bottombutton(),
+      ],
+    );
   }
 }
