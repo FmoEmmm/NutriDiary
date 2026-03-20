@@ -11,10 +11,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  int _foodCount = 0;
+
   List<Widget> _getScrollChildern() {
     return [
       SliverToBoxAdapter(child: TopSearch()),
-      SliverToBoxAdapter(child: Foodlist()),
+      SliverToBoxAdapter(child: Foodlist(foodCount: _foodCount)),
     ];
   }
 
@@ -23,7 +25,13 @@ class _HomeViewState extends State<HomeView> {
     return Stack(
       children: [
         CustomScrollView(slivers: _getScrollChildern()),
-        Bottombutton(),
+        Bottombutton(
+          onAddFood: () {
+            setState(() {
+              _foodCount++;
+            });
+          },
+        ),
       ],
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Bottombutton extends StatefulWidget {
-  const Bottombutton({super.key});
+  //const Bottombutton({super.key});
+  final VoidCallback onAddFood;
+  const Bottombutton({super.key, required this.onAddFood});
 
   @override
   State<Bottombutton> createState() => _BottombuttonState();
@@ -18,7 +20,25 @@ class _BottombuttonState extends State<Bottombutton> {
           showDialog(
             context: context,
             builder: (context) {
-              return AlertDialog(title: Text("ADD"), content: TextField());
+              return AlertDialog(
+                title: Text("今天吃了什么:"),
+                content: TextField(),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      widget.onAddFood();
+                      Navigator.pop(context);
+                    },
+                    child: Text("Yes"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text("No"),
+                  ),
+                ],
+              );
             },
           );
         },
